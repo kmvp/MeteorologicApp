@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Ejs template</title>
+</head>
+
+<body class="text-center">
+    <div class="container">
+        <br><br>
+        <div class="row w3-card-4">
+            <div class="col w3-container w3-teal"><br><br>
+                <h2>≈ Servicio Meteorológico ≈</h2><br>
+                <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather03-512.png" width="230"
+                    height="200">
+            </div>
+            <div class="col-6 w3-container">
+                <form method="post"><br><br>
+                    <div class="form-group center" > <br>
+                        <h2> <b>El tiempo en...</b> </h2>
+                        <input type="text" name="city" class="form-control" id="city" placeholder="Nombre de la ciudad" required="true"><br>
+                        <button type="submit" class="btn btn-primary" style="font-size: large; ">Buscar</button>
+                    </div>
+                    <br><br>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</body>
+
+<style> 
+.center {
+  width: 800px;
+}
+body{
+    background: url(https://www.ismedioambiente.com/wp-content/uploads/2019/04/Convenio-Europeo-del-Paisaje.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+</style>
+
+</html>

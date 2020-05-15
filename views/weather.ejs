@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Cardo&display=swap" rel="stylesheet">
+    <title>Result</title>
+</head>
+
+<body class="text-center">
+    <div class="container">
+        <br><br>
+        <div class="row w3-card-4">
+            <div class="col w3-container w3-teal"><br><br><br><br><br><br>
+                <h2>≈ Servicio Meteorológico ≈</h2><br>
+                    <img style="margin: auto;" src="<%= datac.weather_icons %>" alt="Current weather" width="230"
+                    height="200" style="border-radius: 9px; border: 3px solid rgb(64, 64, 77);">
+            </div>
+            <div class="col-6 w3-container">
+                <div class="form-group center"> <br>
+                    <div class="container">
+                        <div class="row">
+                          <div class="col-sm">
+                            <h3 style="text-align: left;"><b>»  El tiempo en: </b> <%= city %>, <%= datal.country %></h3>
+                            <h3 style="text-align: left;"><b>≈  La temperatura es de: </b> <%= datac.temperature %>ºC</h3>
+                            
+                          </div>
+                          <div class="col-sm">
+                            <h3 style="text-align: left;"><b>»  El clima es </b>  <%= weather_description %></h3>
+                            <img style="margin: auto;" src="<%= datac.weather_icons %>" alt="Current weather" style="border-radius: 9px; border: 3px solid rgb(64, 64, 77);">
+                            <h3 style="text-align: left;"><b>≈  Si embargo se percibe de </b>  <%= datac.feelslike %>ºC</h3>
+                            <h3 style="text-align: left;"><b>»  La probabilidad de lluvia es de </b>  <%= datac.precip %>%</h3>
+                            <h3 style="text-align: left;"><b>≈  Velocidad de viento: </b>  <%= datac.wind_speed %></h3>
+                            <h3 style="text-align: left;"><b>»  Dirección de viento: </b>  <%= datac.wind_dir %></h3>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class=" map" id="map" style=" cursor: auto;">
+                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            </div><br>
+                            <div class="" style="position: absolute;"><br><br><br><br><br><br>
+                                <h3 style="text-align: left; background-color: ivory;"> <b> &nbsp; ≈ Fecha y Hora:</b> <%=fechahora%></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br><br><br><br><br><br>
+                <form method="POST" >
+                    <div class="form-group center"><button style="font-size: large; " type="submit" value="back" class="btn btn-primary">Go back</button></div>
+                </form>  
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+</body>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoia2FyaW5uYW1vbm4iLCJhIjoiY2s5c2NqZG9rMTNrbDNncXNtbW9teTM4OSJ9.AuWEFlNeVeu8JbbGI24FgA';
+    var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+    center: [<%=long%>,<%=lati%>], // starting position [lng, lat]
+    zoom: 12 // starting zoom
+    });
+
+    var marker = new mapboxgl.Marker()
+    .setLngLat([<%=long%>,<%=lati%>])
+    .addTo(map);
+    </script>
+<style> 
+#map { 
+position:  absolute; 
+top: 150px; 
+bottom: 0; 
+width: 400px;
+height: 300px;
+}
+.center {
+    width: 800px;
+}
+body{
+    background: url(https://www.ismedioambiente.com/wp-content/uploads/2019/04/Convenio-Europeo-del-Paisaje.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+</style>
+</html>
