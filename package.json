@@ -1,7 +1,6 @@
 {
-  "name": "proyecto-node.js",
+  "name": "proyecto-node",
   "version": "1.0.0",
-  "description": "",
   "main": "app - copia.js",
   "dependencies": {
     "ejs": "^3.1.2",
@@ -16,5 +15,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmvp/MeteorologicApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kmvp/MeteorologicApp/issues"
+  },
+  "homepage": "https://github.com/kmvp/MeteorologicApp#readme",
+  "description": ""
 }
